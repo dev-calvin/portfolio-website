@@ -1,9 +1,12 @@
-{%- extends "base.html" %}
+{% extends "base.html" %}
+
+{% block styles %}
+{% endblock %}
 
 {% block content %}
   <div class="container">
-    <h1>{{content.title}}</h1>
+    <h1 class="display-1">{{content.title}}</h1>
     <p>ayy lmao</p>
     <p style='color: grey;'>In Progress...</p>
   </div>
-{%- endblock %}
+{% endblock %}

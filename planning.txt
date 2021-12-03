@@ -1,0 +1,111 @@
+- pages
+  - Greeting
+    - '''
+      I am a *Software Engineer* specializing in software development, as well
+      as network and system security. Recently I have been..
+        - Graduated from *Arizona State University* (2021)
+        - Web and mobile app developer at *XLR8 Development* (2017-2021)
+    '''
+  - About me
+    - Hi, I am Calvin and I have had an interest in tech my whole life. When I
+    was younger I never imagined I would learn so much about how it works. My
+    software education started in high school at the coding West-MEC program in
+    2015 where I got my intro to web development. After this I was sure it was
+    something I wanted to pursue professionally so I continued to Arizona State
+    University where I have now completed my Bachelors in Computer Science
+    (Cyber Security). I cannot wait to see where my degree and professional
+    experience will lead me to next. I am excited to learn new technologies and
+    spread into new roles!
+  - Experience
+    - XLR8 Development LLC (2017-2021)
+      - I have worked at XLR8 as a software developer part time for the last four
+      years. This has been a super valuable experience where I was able to work
+      on web and mobile apps for multiple businesses. I worked directly with
+      clients to help them get a product they are happy with. In addition to
+      development I also managed teams on a couple of the projects.
+    - Qwaltec Internship (May - July 2021)
+      - At Qwaltec I worked on a super interesting space craft project. My role
+      was to help set up the user/tenant management for their system. This
+      involved me setting up and learning everything involved in the sample
+      Okta DAC and the BYOB dashboard projects. In addition to user/tenant
+      management topics I also learned and configured different Amazon Web Services
+      that were involved with terraform and serverless. I also a developed a great
+      understanding of the Oauth standard.
+  - Education
+    - West-MEC (2015 - 2017)
+      - During high school I joined an interactive coding program prepared me
+      for a career as a software developer. It taught me how to design and
+      develop software, build apps for phones, tablets, websites, and write
+      and test computer code. The program consisted of over a thousand hours
+      overall.
+    - Arizona State University - Computer Science (Cyber Security) (2017-2021)
+      - At ASU I had a lot of time to practice the concepts I learned at West-Mec.
+      In addition to strengthening the skills I already had I also learned a lot
+      about other parts of the computer. I got lessons on each part of the computer
+      from lower level topics like hardware logic, and assembly languages to higher
+      level topics such as theoretical computer science, operating systems,
+      algorithms, and cybersecurity.
+  - Projects
+    - Pixingo
+      - Android studio
+      - java
+    - Flowstation
+      - android
+      - java
+    - synctimes
+      - android studio
+      - consuming APIs
+      - Payment processing
+    - Final Mile Solar
+       - October 2020 - November 2021
+       - Notable topics
+        - User signup flow
+          - django forms
+        - Solar panel manufacturers and solar panel installer communication tool
+          - Django models
+          - mysql database
+          - Google cloud storage bucket
+          - consuming REST API's
+          - creating webhooks
+        - technologies
+          - bootstrap
+          - jquery
+          - django
+          - html & CSS
+          - python
+          - chart.js
+  - Contact me
+    - email
+      - calvin.mcclure0917@gmail.com
+    - linked in
+      - https://www.linkedin.com/in/calvin-mcclure
+    - direct contact ability
+      - name
+      - subject
+      - message
+- languages scroller
+  - html
+  - css
+  - javascript (es6?)
+  - Python
+  - java
+  - c
+  - c++
+  - mips assembly
+  - lisp
+  - x86_64 assembly
+  - swift
+  - bash
+  - CoffeeScript
+  - php
+  - matlab
+  - XML
+  - prolog
+- frameworks scroller
+  - Django
+  - Flask
+  - angular 1/2
+  - express.js
+  - jQuery
+  - Bootstrap
+  - node.js

@@ -7,7 +7,21 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     data = {
-        'title' : 'Calvin McClure'
+        'title' : 'Calvin McClure',
+        'home': {
+            'a': 'I am a <span>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been..',
+            'b': '- Graduated from *Arizona State University* (2021)',
+            'c': '- Web and mobile app developer at *XLR8 Development* (2017-2021)'
+        },
+        'aboutMe': '''Hi, I am Calvin and I have had an interest in tech my whole life. When I
+                    was younger I never imagined I would learn so much about how it works. My
+                    software education started in high school at the coding West-MEC program in
+                    2015 where I got my intro to web development. After this I was sure it was
+                    something I wanted to pursue professionally so I continued to Arizona State
+                    University where I have now completed my Bachelors in Computer Science
+                    (Cyber Security). I cannot wait to see where my degree and professional
+                    experience will lead me to next. I am excited to learn new technologies and
+                    spread into new roles!'''
     }
     return render_template('index.html', content=data)
 

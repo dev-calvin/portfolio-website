@@ -1,8 +1,9 @@
 :root {
-  --main-color: #BCAF9C;
-  --secondary-color: #FFFFFF;
-  --text-color-light: white;
-  --text-color-dark: black;
+  --background-color: #EAE7DC;
+  --forground-color: #D8C3A5;
+  --text-color: #8E8D8A;
+  --red-dark-color: #E85A4F;
+  --red-light-color: #E98074;
 }
 
 .selector-for-some-widget {
@@ -14,8 +15,24 @@
 }
 
 body {
-  background-color: var(--main-color);
+  background-color: var(--background-color);
   font-family: Helvetica;
+}
+
+p {
+  color: var(--text-color)
+}
+
+h1 {
+  color: var(--red-dark-color)
+}
+
+h2, h3, h4, h5 {
+  color: var(--red-light-color)
+}
+
+span {
+  color: var(--red-light-color)
 }
 
 .container {

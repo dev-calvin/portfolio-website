@@ -5,34 +5,23 @@
 {{ super() }}
 <style media="screen">
   .scene-1 {
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5em;
+    margin-top: 3em;
   }
 
   .scene-2 {
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 40em;
-    border: 2px solid red;
+    margin-bottom: 10em;
+    background-color: var(--forground-color);
   }
 
   .about-me-text {
-    margin-left: auto;
-    margin-right: auto;
     max-width: 60em;
-  }
-
-  .align-center {
-    align-content: center;
   }
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .scene-1 {
-      margin-top: 5em;
+      margin-top: 2em;
     }
   }
 
@@ -48,6 +37,10 @@
     .scene-1 {
       margin-top: 10em;
     }
+
+    .about-me-text {
+      font-size: 1.3em;
+    }
   }
 
   /* Large devices (laptops/desktops, 992px and up) */
@@ -55,12 +48,20 @@
     .scene-1 {
       margin-top: 15em;
     }
+
+    .about-me-text {
+      font-size: 2em;
+    }
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
     .scene-1 {
-      margin-top: 20em;
+      margin-top: 10em;
+    }
+
+    .about-me-text {
+      font-size: 2em;
     }
   }
 </style>
@@ -69,38 +70,43 @@
 {% block content %}
   {{ super() }}
   <div class="container">
-    <div class="scene-1 row fit-content">
-      <div class="col text-center">
+    <div class="scene-1 row" id="scene-1">
+      <div class="col">
         <div class="row">
-          <h4>Hello World,</h4>
+          <h3>Hello World, my name is</h3>
         </div>
         <div class="row">
-          <h1 class="display-1">I'm Calvin 👋🏼</h1>
+          <h1 class="display-1" style="font-family: sans-serif;">Calvin McClure 👋🏼</h1>
+        </div>
+      </div>
+      <hr>
+      <div class="col">
+        <!-- <div class="row"> -->
+          <p class="about-me-text">{{content.home.a|safe}}</p>
+          <!-- <br> -->
+          <p class="about-me-text">{{content.home.b|safe}}</p>
+          <p class="about-me-text">{{content.home.c|safe}}</p>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="scene-2 row fit-content" id="scene-2">
+      <div class="col">
+        <div class="row">
+          <h2>About Me</h2>
+        </div>
+        <div class="row">
+          <div style="height:0em;width:100%;border: 2px solid blue;">
+
+          </div>
         </div>
       </div>
       <hr>
       <div class="col text-center">
         <div class="row">
-          <p class="about-me-text">I am a software engineer with a background in software development, as well as network and system security. I am currently working on my Bachelors at Arizona State University and on track to graduate December 5th. Web and mobile app development is my strongest area of expertise but I am excited to expand my knowledge and spread into new roles!</p>
+          <p class="about-me-text">{{content.aboutMe}}</p>
         </div>
       </div>
     </div>
 
-
-    <!-- <div class="scene-2 row fit-content">
-      <div class="square">
-        <table>
-          <tr>
-            <td>a</td>
-          </tr>
-          <tr>
-            <td>a</td>
-          </tr>
-          <tr>
-            <td>a</td>
-          </tr>
-        </table>
-      </div>
-    </div> -->
   </div>
 {% endblock %}

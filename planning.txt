@@ -7,15 +7,22 @@
         - Web and mobile app developer at *XLR8 Development* (2017-2021)
     '''
   - About me
-    - Hi, I am Calvin and I have had an interest in tech my whole life. When I
-    was younger I never imagined I would learn so much about how it works. My
-    software education started in high school at the coding West-MEC program in
-    2015 where I got my intro to web development. After this I was sure it was
-    something I wanted to pursue professionally so I continued to Arizona State
-    University where I have now completed my Bachelors in Computer Science
-    (Cyber Security). I cannot wait to see where my degree and professional
-    experience will lead me to next. I am excited to learn new technologies and
-    spread into new roles!
+    -     '''
+          Hi, my name is Calvin and I have had an interest in tech my whole
+          life. When I was younger, I never imagined I would learn so much about how
+          it works.
+
+          My intro to web development started in high school at the coding West-MEC
+          program in 2015. After this, I was sure it was something I wanted to pursue
+          professionally. So, I continued to Arizona State University where I have now
+          completed my Bachelors in Computer Science (Cyber Security).
+
+          While at ASU, I have been programming professionally at XLR8
+          Development honing my skills at web and mobile app development. I
+          cannot wait to see where my degree and professional  experience will
+          lead me to next. I am excited to learn new technologies and spread
+          into new roles!
+          '''
   - Experience
     - XLR8 Development LLC (2017-2021)
       - I have worked at XLR8 as a software developer part time for the last four
@@ -27,9 +34,9 @@
       - At Qwaltec I worked on a super interesting space craft project. My role
       was to help set up the user/tenant management for their system. This
       involved me setting up and learning everything involved in the sample
-      Okta DAC and the BYOB dashboard projects. In addition to user/tenant
+      Okta-DAC and the Okta BYOB-dashboard projects. In addition to user/tenant
       management topics I also learned and configured different Amazon Web Services
-      that were involved with terraform and serverless. I also a developed a great
+      that were involved with Terraform and Serverless. I also a developed a great
       understanding of the Oauth standard.
   - Education
     - West-MEC (2015 - 2017)

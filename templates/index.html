@@ -58,11 +58,17 @@
   @media only screen and (min-width: 1200px) {
     .scene-1 {
       margin-top: 10em;
+      padding-left: 1em;
+      border-left: .1em solid var(--red-dark-color);
     }
 
     .about-me-text {
       font-size: 2em;
     }
+  }
+
+  #about-me-list {
+    vertical-align: baseline;
   }
 </style>
 {% endblock %}
@@ -76,16 +82,28 @@
           <h3>Hello World, my name is</h3>
         </div>
         <div class="row">
-          <h1 class="display-1" style="font-family: sans-serif;">Calvin McClure 👋🏼</h1>
+          <h1 class="display-1" style="font-weight:500;">Calvin McClure.</h1>
         </div>
       </div>
-      <hr>
+      <br>
       <div class="col">
         <!-- <div class="row"> -->
-          <p class="about-me-text">{{content.home.a|safe}}</p>
+          <h5 class="about-me-text">{{content.home.a|safe}}</h5>
           <!-- <br> -->
-          <p class="about-me-text">{{content.home.b|safe}}</p>
-          <p class="about-me-text">{{content.home.c|safe}}</p>
+          <ul class="list-unstyled">
+            <li>
+              <h5 class="about-me-text"><svg id="about-me-list" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>{{content.home.b|safe}}</h5>
+            </li>
+            <li>
+              <h5 class="about-me-text"><svg id="about-me-list" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>{{content.home.c|safe}}</h5>
+            </li>
+          </ul>
+          <!-- <h5 class="about-me-text">{{content.home.b|safe}}</h5>
+          <h5 class="about-me-text">{{content.home.c|safe}}</h5> -->
         <!-- </div> -->
       </div>
     </div>

@@ -9,9 +9,9 @@ def index():
     data = {
         'title' : 'Calvin McClure',
         'home': {
-            'a': 'I am a <span>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been..',
-            'b': '- Graduated from *Arizona State University* (2021)',
-            'c': '- Web and mobile app developer at *XLR8 Development* (2017-2021)'
+            'a': 'I am a <span class=\'highlight\'>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been..',
+            'b': 'Graduated from <span class=\'highlight\'>Arizona State University</span> <span class=\'text-muted\'>(2021)</span>',
+            'c': 'Web and mobile app developer at <span class=\'highlight\'>XLR8 Development</span> <span class=\'text-muted\'>(2017-2021)</span>'
         },
         'aboutMe': '''Hi, I am Calvin and I have had an interest in tech my whole life. When I
                     was younger I never imagined I would learn so much about how it works. My

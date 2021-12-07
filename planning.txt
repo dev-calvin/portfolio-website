@@ -7,7 +7,6 @@
         - Web and mobile app developer at *XLR8 Development* (2017-2021)
     '''
   - About me
-<<<<<<< HEAD
     -     '''
           Hi, my name is Calvin and I have had an interest in tech my whole
           life. When I was younger, I never imagined I would learn so much about how
@@ -24,18 +23,6 @@
           lead me to next. I am excited to learn new technologies and spread
           into new roles!
           '''
-=======
-    -     Hi, my name is Calvin and I have had an interest in tech my whole
-    life. When I was younger, I never imagined I would learn so much about how
-    it works.
-
-    My intro to web development started in high school at the coding West-MEC
-    program in 2015. After this, I was sure it was something I wanted to pursue
-    professionally. So, I continued to Arizona State University where I have now
-    completed my Bachelors in Computer Science (Cyber Security).
-
-While at ASU, I have been programming professionally at XLR8 Development honing my skills at web and mobile app development. I cannot wait to see where my degree and professional  experience will lead me to next. I am excited to learn new technologies and spread into new roles!
->>>>>>> 3aff98387f697e7cd4a0ca7a248924f40bf18d13
   - Experience
     - XLR8 Development LLC (2017-2021)
       - I have worked at XLR8 as a software developer part time for the last four

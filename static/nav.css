@@ -1,0 +1,60 @@
+.navbar-light {
+  background-color: var(--background-color);
+}
+
+.navbar {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.nav-text {
+  color: black;
+  font-size: .7em;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  border: .1em solid var(--grey-border);
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.nav-item:hover {
+  box-shadow: 1px 1px 0px 1px black;
+}
+
+.navbar-toggler {
+  margin-top: .5em;
+}
+
+.resume-button {
+  background-color: #D8C3A580;
+  color: black;
+  font-size: .7em;
+  font-weight: 700;
+  border: none;
+  margin-right: 1em;
+}
+
+.resume-text {
+  padding-top: .7em;
+  padding-bottom: .7em;
+  padding-left: .7em;
+  padding-right: .7em;
+  margin: 0;color: black;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.resume-button:hover {
+  box-shadow: 1px 1px 0px 1px black;
+  background-color: var(--foreground-color);
+}
+
+#navbarSupportedContent {
+  margin-top: 1em;
+}

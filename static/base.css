@@ -30,6 +30,10 @@ h2, h3, h4 {
   color: var(--red-light-color);
 }
 
+.container {
+  margin: 0;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 

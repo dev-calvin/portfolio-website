@@ -4,9 +4,6 @@
 {% block styles %}
 {{ super() }}
 <style media="screen">
-  .banner-photo {
-    margin-top: 3em;
-  }
 
   #keyboard-banner {
     opacity:75%;
@@ -24,13 +21,35 @@
 
   #email-banner-text {
     color:black;
-    font-size:1.3em;
+    font-size:1.5vw;
     margin-bottom:0;
     margin-left:5%;
   }
 
   hr.email-banner-hr {
     border: 1px solid black;
+  }
+
+  h2 {
+    font-size: 3vw;
+  }
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  h5 {
+    font-size: 2vw;
+  }
+
+  .home-text {
+    width:70vw;
+    padding-left:1.5em;
+  }
+
+  .home-text-padding-left {
+    border-right: 1px solid red;
+    width:2vw;
   }
 
   /* Extra small devices (phones, 600px and down) */
@@ -45,12 +64,14 @@
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
-
+    .home-text {
+      padding-left:2.5em;
+    }
   }
 
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
-    
+
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -63,8 +84,8 @@
 {% block content %}
   {{ super() }}
   <div class="container">
-    <div class="row" style="position:absolute;left:0;right:0;">
-      <div>
+    <div class="row" style="position:absolute;left:0;right:0;top:4em;">
+      <div style="padding:0;">
         <img id="keyboard-banner" src="{{url_for('static', filename='images/keyboard-cropped.jpeg')}}" alt="mechanical keyboard photo">
         <div id="email-banner">
           <div style="display:flex;align-items:center;height:100%;">
@@ -74,6 +95,25 @@
             <div class="col-3">
               <hr class="email-banner-hr">
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top:23vw; width:100vw; padding-left: 2em;">
+      <h2>Hello world, my name is</h2>
+      <h1 style="font-weight:500;margin-top:-.2em;">Calvin McClure</h1>
+      <div style="display:flex;">
+        <div class="home-text-padding-left">
+        </div>
+        <div class="row">
+          <div class="home-text">
+            <h5>{{content.home.a|safe}}</h5>
+          </div>
+          <div class="home-text">
+            <h5>- {{content.home.b|safe}}</h5>
+          </div>
+          <div class="home-text">
+            <h5>- {{content.home.c|safe}}</h5>
           </div>
         </div>
       </div>

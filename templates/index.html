@@ -24,6 +24,7 @@
     font-size:1.5vw;
     margin-bottom:0;
     margin-left:5%;
+    background-color: var(--background-color);
   }
 
   hr.email-banner-hr {
@@ -58,17 +59,22 @@
     padding-left: 2em;
   }
 
+  #home-main-text {
+    font-weight:500;
+    margin-top:-.2em;
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .home-text-container {
-      margin-top:28vw;
+      margin-top:15vw;
     }
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
     .home-text-container {
-      margin-top:26vw;
+      margin-top:15.5vw;
     }
   }
 
@@ -78,7 +84,7 @@
       padding-left:2.5em;
     }
     .home-text-container {
-      margin-top:25vw;
+      margin-top:16.5vw;
     }
     .home-text {
       width:70vw;
@@ -88,7 +94,7 @@
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
     .home-text-container {
-      margin-top:23vw;
+      margin-top:16.5vw;
     }
   }
 
@@ -102,9 +108,9 @@
 {% block content %}
   {{ super() }}
   <div class="container">
-    <div class="row" style="position:absolute;left:0;right:0;top:4em;">
+    <div class="row" style="position:absolute;left:0;right:0;top:2em;">
       <div style="padding:0;">
-        <img id="keyboard-banner" src="{{url_for('static', filename='images/keyboard-cropped.jpeg')}}" alt="mechanical keyboard photo">
+        <img style="height:17vw;" id="keyboard-banner" src="{{url_for('static', filename='images/keyboard-cropped.jpeg')}}" alt="mechanical keyboard photo">
         <div id="email-banner">
           <div style="display:flex;align-items:center;height:100%;">
             <div class="col-9">
@@ -119,7 +125,7 @@
     </div>
     <div class="row home-text-container">
       <h2>Hello world, my name is</h2>
-      <h1 style="font-weight:500;margin-top:-.2em;">Calvin McClure</h1>
+      <h1 id="home-main-text">Calvin McClure</h1>
       <div style="display:flex;">
         <div class="home-text-padding-left">
         </div>

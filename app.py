@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     data = {
-        'title' : 'Calvin McClure',
+        'title' : 'Calvin McClure.',
         'home': {
             'a': 'I am a <span class=\'highlight\'>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been..',
             'b': 'Graduated from <span class=\'highlight\'>Arizona State University</span> <span class=\'text-muted\'>(2021)</span>',

@@ -9,7 +9,7 @@ def index():
     data = {
         'title' : 'Calvin McClure.',
         'home': {
-            'a': 'I am a <span class=\'highlight\'>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been..',
+            'a': 'I am a <span class=\'highlight\'>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been...',
             'b': 'Graduated from <span class=\'highlight\'>Arizona State University</span> <span class=\'text-muted\'>(2021)</span>',
             'c': 'Web and mobile app developer at <span class=\'highlight\'>XLR8 Development</span> <span class=\'text-muted\'>(2017-2021)</span>'
         },

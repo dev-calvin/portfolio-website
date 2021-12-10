@@ -100,6 +100,25 @@
     color: var(--red-dark-color);
     cursor:pointer;
   }
+
+  .experience-container {
+    margin-top: 7vw;
+    width: 100vw;
+    height: 40vw;
+  }
+
+  .experience-img {
+    height:100%;
+    width:24vw;
+    margin-left:-5vw;
+  }
+
+  .experience-text {
+    text-align:justify;
+    margin-top: 1em;
+    font-size: 2.2vw;
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .home-text-container {
@@ -161,7 +180,7 @@
     </div>
     <div class="row home-text-container">
       <h4>Hello world, my name is</h4>
-      <h1 id="home-main-text">Calvin McClure</h1>
+      <h1 id="home-main-text">Calvin McClure.</h1>
       <div style="display:flex;">
         <div class="home-text-padding-left">
         </div>
@@ -178,22 +197,71 @@
         </div>
       </div>
     </div>
-    <div class="row about-me-container">
-      <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})">
-      </div>
+    <div class="row about-me-container" id="about-me-container" style="scroll-margin-top:5em;">
+      <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"></div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
-        <div class="row">
-          <div id="about-me">
-            <h2 id="home-main-text">About Me</h2>
+        <div class="row" id="about-me">
+          <div>
+            <h2 id="home-main-text">About Me.</h2>
             <img class="about-me-img" src="{{url_for('static', filename='images/headshot.jpeg')}}" alt="Photo of Calvin McClure">
             <h5 class="about-me-text-top">Hi, my name is Calvin and I have had an interest in tech my whole life. When I was younger, I never imagined I would learn so much about how it works.</h5>
             <h5 class="about-me-text">My intro to web development started in high school at the <span class="highlight-link"><a class="about-me-link" href="https://west-mec.edu/coding/" target="_blank">coding West-MEC program</a></span> in 2015. After this, I was sure it was something I wanted to pursue professionally. So, I continued to Arizona State University where I have now completed my <span class="highlight-link"><a class="about-me-link" href="https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/ESCSEIBS/undergrad/false?init=false&nopassive=true" target="_blank">Bachelors in Computer Science (Cyber Security)</a></span>.</h5>
             <h5 class="about-me-text">While at ASU, I have been programming professionally at <span class="highlight-link"><a class="about-me-link" href="https://www.xlr8dev.com/" target="_blank">XLR8 Development</a></span> honing my skills at web and mobile app development. I cannot wait to see where my degree and professional  experience will lead me to next. I am excited to learn new technologies and spread into new roles!</h5>
           </div>
         </div>
-      <div class="col-2">
-
       </div>
+      <div class="col-2"></div>
+    </div>
+    <div class="row experience-container" id="experience-container">
+      <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
+        <img class="experience-img" src="{{url_for('static', filename='images/cocktail.jpg')}}" alt="Photo of Calvin McClure">
+      </div>
+      <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
+        <div class="row">
+          <h2 id="home-main-text">Experience.</h2>
+          <div class="col-3">
+            <div class="row">
+              <div style="height:5vw; border: 1px dashed var(--red-dark-color); width:95%; margin-bottom:1em;">
+                <div class="col-2">
+
+                </div>
+                <div id="xlr8-experience-button" class="col-10" style="border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw;">
+                  <h3 style="color:black; font-size: 1.3vw;">XLR8 Development</h3>
+                  <p>(2017-2021)</p>
+                </div>
+              </div>
+              <div id="qwaltec-experience-button" style="height:5vw; border: 1px dashed var(--red-dark-color); width:95%; margin-bottom:1em;">
+                <div class="col-2">
+
+                </div>
+                <div class="col-10" style="border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw;">
+                  <h3 style="color:black; font-size: 1.3vw;">Qwaltec Internship</h3>
+                  <p>(May - July 2021)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-9" style="border: 1px dashed var(--red-dark-color);height:30vw;">
+            <h5 class="experience-text" id="xlr8-text">I have worked at XLR8 as a software developer part-time for the last four years. This has been a super valuable experience where I was able to work on web and mobile apps for multiple businesses. I worked directly with clients to help them get the product they were happy with. In addition to full stack development, I also managed teams on a couple of the projects.</h5>
+            <h5 class="experience-text hidden" id="qwaltec-text">At Qwaltec, I worked on a super interesting space craft project. My role was to help set up the user/tenant management for their system. This involved me learning everything in the sample Okta-DAC and the Okta BYOB-dashboard projects. In addition to user/tenant management topics, I also learned different Amazon Web Services and configured them with Terraform and Serverless. I also developed a great understanding of the Oauth standard.</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    $('#xlr8-experience-button').click(function() {
+      console.log('asdfasdfasfd');
+      $('#qwaltec-text').addClass('hidden');
+      $('#xlr8-text').removeClass('hidden');
+    });
+
+    $('#qwaltec-experience-button').click(function() {
+      console.log('asdfaasdfasdfasdsdfasfd');
+      $('#qwaltec-text').removeClass('hidden');
+      $('#xlr8-text').addClass('hidden');
+    });
+  </script>
 {% endblock %}

@@ -115,8 +115,66 @@
 
   .experience-text {
     text-align:justify;
-    margin-top: 1em;
     font-size: 2.2vw;
+    border-top: 1px solid red;
+    padding-top: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .experience-title-text {
+    font-size: 2.5vw;
+    margin-left:1vw;
+    margin-top:1vw;
+    margin-bottom:1vw;
+  }
+
+  .experience-button {
+    height: fit-content;
+    border: .1vw solid var(--red-light-color);
+    width:95%;
+    margin-bottom:1vw;
+    cursor: pointer;
+
+    -webkit-transition: margin .5s;
+  }
+
+  .experience-button-selected {
+    height: fit-content;
+    border: .3vw solid var(--red-dark-color);
+    width:95%;
+    margin-bottom:1vw;
+    cursor: pointer;
+
+    -webkit-transition: margin .5s;
+  }
+
+  .experience-button:hover {
+    margin-left: -1.3vw;
+    -webkit-transition: margin .5s;
+  }
+
+  .experience-button-text {
+    border-left: 1px solid black;
+    padding-left: 1vw;
+    margin-top: 1vw;
+    width: 100%;
+  }
+
+  .experience-button-employer-text {
+    color: black;
+    font-size: 1.3vw;
+  }
+
+  .experience-button-date-text {
+    font-size: 1vw;
+    margin-bottom: .5vw;
+    margin-top: -.5vw;
+  }
+
+  #experience-tooltip {
+    margin-left:1vw;
+    margin-top:1vw;
   }
 
   /* Extra small devices (phones, 600px and down) */
@@ -197,7 +255,7 @@
         </div>
       </div>
     </div>
-    <div class="row about-me-container" id="about-me-container" style="scroll-margin-top:5em;">
+    <div class="row about-me-container scroll-to-section" id="about-me-container">
       <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"></div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row" id="about-me">
@@ -212,7 +270,7 @@
       </div>
       <div class="col-2"></div>
     </div>
-    <div class="row experience-container" id="experience-container">
+    <div class="row experience-container scroll-to-section" id="experience-container">
       <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
         <img class="experience-img" src="{{url_for('static', filename='images/cocktail.jpg')}}" alt="Photo of Calvin McClure">
       </div>
@@ -221,29 +279,32 @@
           <h2 id="home-main-text">Experience.</h2>
           <div class="col-3">
             <div class="row">
-              <div style="height:5vw; border: 1px dashed var(--red-dark-color); width:95%; margin-bottom:1em;">
-                <div class="col-2">
-
-                </div>
-                <div id="xlr8-experience-button" class="col-10" style="border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw;">
-                  <h3 style="color:black; font-size: 1.3vw;">XLR8 Development</h3>
-                  <p>(2017-2021)</p>
+              <div id="xlr8-experience-button" class="experience-button">
+                <div class="col-2"></div>
+                <div class="col-10 experience-button-text">
+                  <h3 class="experience-button-employer-text">XLR8 Development</h3>
+                  <p class="experience-button-date-text">(2017-2021)</p>
                 </div>
               </div>
-              <div id="qwaltec-experience-button" style="height:5vw; border: 1px dashed var(--red-dark-color); width:95%; margin-bottom:1em;">
-                <div class="col-2">
-
-                </div>
-                <div class="col-10" style="border-left: 1px solid black; padding-left: 1vw; margin-top: 1vw;">
-                  <h3 style="color:black; font-size: 1.3vw;">Qwaltec Internship</h3>
-                  <p>(May - July 2021)</p>
+              <div id="qwaltec-experience-button" class="experience-button">
+                <div class="col-2"></div>
+                <div class="col-10 experience-button-text">
+                  <h3 class="experience-button-employer-text">Qwaltec Internship</h3>
+                  <p style="font-size: 1vw;margin-bottom: .5vw;margin-top: -.5vw;">(May - July 2021)</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-9" style="border: 1px dashed var(--red-dark-color);height:30vw;">
-            <h5 class="experience-text" id="xlr8-text">I have worked at XLR8 as a software developer part-time for the last four years. This has been a super valuable experience where I was able to work on web and mobile apps for multiple businesses. I worked directly with clients to help them get the product they were happy with. In addition to full stack development, I also managed teams on a couple of the projects.</h5>
-            <h5 class="experience-text hidden" id="qwaltec-text">At Qwaltec, I worked on a super interesting space craft project. My role was to help set up the user/tenant management for their system. This involved me learning everything in the sample Okta-DAC and the Okta BYOB-dashboard projects. In addition to user/tenant management topics, I also learned different Amazon Web Services and configured them with Terraform and Serverless. I also developed a great understanding of the Oauth standard.</h5>
+            <h5 id="experience-tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/></svg> Click To See My Experience</h5>
+            <div class="row hidden" id="xlr8-text">
+              <h4 class="experience-title-text">Full Stack Developer</h4>
+              <h5 class="experience-text">I have worked at XLR8 as a software developer part-time for the last four years. This has been a super valuable experience where I was able to work on web and mobile apps for multiple businesses. I worked directly with clients to help them get the product they were happy with. In addition to full stack development, I also managed teams on a couple of the projects.</h5>
+            </div>
+            <div class="row hidden" id="qwaltec-text">
+              <h4 class="experience-title-text">Software Engineer Intern</h4>
+              <h5 class="experience-text" style="font-size: 2vw;">At Qwaltec, I worked on a super interesting space craft project. My role was to help set up the user/tenant management for their system. This involved me learning everything in the sample Okta-DAC and the Okta BYOB-dashboard projects. In addition to user/tenant management topics, I also learned different Amazon Web Services and configured them with Terraform and Serverless. I also developed a great understanding of the Oauth standard.</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -253,15 +314,24 @@
 
   <script type="text/javascript">
     $('#xlr8-experience-button').click(function() {
-      console.log('asdfasdfasfd');
+      //change text
+      $('#experience-tooltip').addClass('hidden');
       $('#qwaltec-text').addClass('hidden');
       $('#xlr8-text').removeClass('hidden');
+
+      //change button highlight
+      $('#xlr8-experience-button').addClass('experience-button-selected');
+      $('#qwaltec-experience-button').removeClass('experience-button-selected');
     });
 
     $('#qwaltec-experience-button').click(function() {
-      console.log('asdfaasdfasdfasdsdfasfd');
+      $('#experience-tooltip').addClass('hidden');
       $('#qwaltec-text').removeClass('hidden');
       $('#xlr8-text').addClass('hidden');
+
+      //change button highlight
+      $('#xlr8-experience-button').removeClass('experience-button-selected');
+      $('#qwaltec-experience-button').addClass('experience-button-selected');
     });
   </script>
 {% endblock %}

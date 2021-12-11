@@ -30,6 +30,11 @@ h1, h2 {
   color: var(--red-light-color);
 }
 
+.dark-highlight {
+  font-weight: 700;
+  color: var(--red-light-color);
+}
+
 .highlight {
   color: var(--red-light-color);
 }
@@ -45,6 +50,10 @@ h1, h2 {
 
 .container {
   margin: 0;
+}
+
+.scroll-to-section {
+  scroll-margin-top: 5em;
 }
 
 /* Extra small devices (phones, 600px and down) */

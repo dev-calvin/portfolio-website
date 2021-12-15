@@ -53,7 +53,7 @@
   }
 
   .home-text-padding-left {
-    border-right: 1px solid red;
+    border-right: .15vw dotted var(--red-dark-color);
     width:2vw;
   }
 
@@ -63,7 +63,7 @@
     padding-left: 2em;
   }
 
-  #home-main-text {
+  .section-text {
     font-weight:500;
     margin-top:-.2em;
   }
@@ -71,16 +71,18 @@
   .about-me-container {
     margin-top: 15vw;
     width: 100vw;
-    height: 40vw;
   }
 
   .about-me-text {
     text-align:justify;
-    margin-top: 1em;
+    font-size: 1.8vw;
+    margin-top: .8vw;
   }
 
   .about-me-text-top {
     text-align:justify;
+    font-size: 1.8vw;
+    padding-top: .8vw;
   }
 
   .about-me-img {
@@ -89,6 +91,12 @@
     margin-left:2vw;
     width: 13vw;
     border-radius: 1vw;
+  }
+
+  .about-me-side-img {
+    height:100%;
+    width:60vw;
+    /* margin-left: -0vw; */
   }
 
   .about-me-link {
@@ -102,15 +110,15 @@
   }
 
   .experience-container {
-    margin-top: 7vw;
+    margin-top: 15vw;
     width: 100vw;
     height: 40vw;
   }
 
   .experience-img {
     height:100%;
-    width:24vw;
-    margin-left:-5vw;
+    width:60vw;
+    margin-left: -30vw;
   }
 
   .experience-text {
@@ -172,10 +180,40 @@
     margin-top: -.5vw;
   }
 
+  .projects-container {
+    margin-top: 15vw;
+    width: 100vw;
+    height: 40vw;
+  }
+
+  .projects-panels {
+    height:13vw;
+    width:95%;
+    border: 1px solid red;
+    margin-top:1vw;
+    margin-bottom:1vw;
+    margin-left:0;
+    margin-right:0;
+    padding: 0;
+  }
+
+  .projects-panels-title-text {
+    padding-left: 1vw;
+    border-bottom: .1vw solid var(--red-dark-color);
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
     .home-text-container {
       margin-top:15vw;
+    }
+
+    .about-me-text {
+        line-height: 160%;
+    }
+
+    .about-me-text-top {
+        line-height: 160%;
     }
   }
 
@@ -233,45 +271,65 @@
     </div>
     <div class="row home-text-container">
       <h4>Hello world, my name is</h4>
-      <h1 id="home-main-text">Calvin McClure.</h1>
+      <h1 id="section-text">Calvin McClure.</h1>
       <div style="display:flex;">
         <div class="home-text-padding-left">
         </div>
         <div class="row">
           <div class="home-text">
-            <h5>{{content.home.a|safe}}</h5>
+            <h5>
+              I am a <span class=\'highlight\'>Software Engineer</span> specializing in software development, as well as network and system security. Recently I have been...
+            </h5>
           </div>
           <div class="home-text">
-            <h5>- {{content.home.b|safe}}</h5>
+            <h5>
+              - Graduated from <span class=\'highlight\'>Arizona State University</span> <span class=\'text-muted\'>(2021)</span>
+            </h5>
           </div>
           <div class="home-text">
-            <h5>- {{content.home.c|safe}}</h5>
+            <h5>
+              - Web and mobile app developer at <span class=\'highlight\'>XLR8 Development</span> <span class=\'text-muted\'>(2017-2021)</span>
+            </h5>
           </div>
         </div>
       </div>
     </div>
     <div class="row about-me-container scroll-to-section" id="about-me-container">
-      <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"></div>
+      <!-- <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"> -->
+      <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
+          <img class="about-me-side-img" src="{{url_for('static', filename='images/car.jpeg')}}" alt="Photo of a cool car">
+      </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row" id="about-me">
           <div>
-            <h2 id="home-main-text">About Me.</h2>
-            <img class="about-me-img" src="{{url_for('static', filename='images/headshot.jpeg')}}" alt="Photo of Calvin McClure">
-            <h5 class="about-me-text-top">Hi, my name is Calvin and I have had an interest in tech my whole life. When I was younger, I never imagined I would learn so much about how it works.</h5>
-            <h5 class="about-me-text">My intro to web development started in high school at the <span class="highlight-link"><a class="about-me-link" href="https://west-mec.edu/coding/" target="_blank">coding West-MEC program</a></span> in 2015. After this, I was sure it was something I wanted to pursue professionally. So, I continued to Arizona State University where I have now completed my <span class="highlight-link"><a class="about-me-link" href="https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/ESCSEIBS/undergrad/false?init=false&nopassive=true" target="_blank">Bachelors in Computer Science (Cyber Security)</a></span>.</h5>
-            <h5 class="about-me-text">While at ASU, I have been programming professionally at <span class="highlight-link"><a class="about-me-link" href="https://www.xlr8dev.com/" target="_blank">XLR8 Development</a></span> honing my skills at web and mobile app development. I cannot wait to see where my degree and professional  experience will lead me to next. I am excited to learn new technologies and spread into new roles!</h5>
+            <h2 id="section-text">About Me.</h2>
+            <div style="border: 1px dashed var(--red-dark-color); padding: 1vw;height: fit-content;">
+
+              <img class="about-me-img" src="{{url_for('static', filename='images/headshot.jpeg')}}" alt="Photo of Calvin McClure">
+              <h5 class="about-me-text-top">
+                Hi, my name is Calvin and I have had an interest in tech my whole life. When I was younger, I never imagined I would learn so much about how it works.
+              </h5>
+              <h5 class="about-me-text">
+                My intro to web development started in high school at the <span class="highlight-link"><a class="about-me-link" href="https://west-mec.edu/coding/" target="_blank">coding West-MEC program</a></span> in 2015. After this, I was sure it was something I wanted to pursue professionally. So, I continued to Arizona State University where I have now completed my <span class="highlight-link"><a class="about-me-link" href="https://webapp4.asu.edu/programs/t5/majorinfo/ASU00/ESCSEIBS/undergrad/false?init=false&nopassive=true" target="_blank">Bachelors in Computer Science (Cyber Security)</a></span>. While at ASU, I have been programming professionally at <span class="highlight-link"><a class="about-me-link" href="https://www.xlr8dev.com/" target="_blank">XLR8 Development</a></span> honing my skills at web and mobile app development.
+              </h5>
+              <h5 class="about-me-text">
+                These days, I am applying to full time positions and am open to new opportunities. I cannot wait to see where my degree and professional experience will lead me to next. I am excited to learn new technologies and spread into new roles!
+              </h5>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-2"></div>
     </div>
+
+
     <div class="row experience-container scroll-to-section" id="experience-container">
       <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
-        <img class="experience-img" src="{{url_for('static', filename='images/cocktail.jpg')}}" alt="Photo of Calvin McClure">
+        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row">
-          <h2 id="home-main-text">Experience.</h2>
+          <h2 id="section-text">Experience.</h2>
           <div class="col-3">
             <div class="row">
               <div id="xlr8-experience-button" class="experience-button experience-button-selected">
@@ -304,9 +362,60 @@
       </div>
       <div class="col-2"></div>
     </div>
+
+
+    <div class="row projects-container scroll-to-section" id="projects-container">
+      <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
+        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
+      </div>
+      <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
+        <div class="row">
+          <h2 id="section-text">Projects.</h2>
+          <div class="col-6">
+            <div class="row">
+              <div class="projects-panels">
+                <h4 class="projects-panels-title-text">Pixingo</h4>
+              </div>
+              <div class="projects-panels">
+                <h4 class="projects-panels-title-text">Flowstation</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="projects-panels">
+                <h4 class="projects-panels-title-text">Final Mile Solar</h4>
+              </div>
+              <div class="projects-panels">
+                <h4 class="projects-panels-title-text">Synctimes</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+
+    <div class="row projects-container scroll-to-section" id="projects-container">
+      <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
+        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
+      </div>
+      <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
+        <div class="row">
+          <h2 id="section-text">Education.</h2>
+
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+
   </div>
 
   <script type="text/javascript">
+    // experience buttons
+    // ############################################
     $('#xlr8-experience-button').click(function() {
       //change text
       $('#experience-tooltip').addClass('hidden');
@@ -327,5 +436,7 @@
       $('#xlr8-experience-button').removeClass('experience-button-selected');
       $('#qwaltec-experience-button').addClass('experience-button-selected');
     });
+    // experience buttons
+    // ############################################
   </script>
 {% endblock %}

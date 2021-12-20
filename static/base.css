@@ -18,6 +18,11 @@ html {
   scroll-behavior: smooth;
 }
 
+td {
+  padding-left:1.5vw;
+  padding-right:1.5vw;
+}
+
 p, h5 {
   color: var(--text-color);
 }

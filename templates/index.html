@@ -215,7 +215,7 @@
 
   .projects-panels {
     height:13vw;
-    /* width:95%; */
+    /* width:20vw; */
     border: 1px dashed var(--red-dark-color);
     margin-top:1vw;
     margin-bottom:1vw;
@@ -228,23 +228,24 @@
     height:80%;
     background-color:var(--red-dark-color);
     width:2vw;
+    padding-left:0;
+    padding-right:0;
     margin-top:1.5vw;
     padding-top:5vw;
     -webkit-transition: width .5s;
   }
 
   .projects-panels-container:hover .projects-panel-tag{
-      width:3vw;
+      width:2.5vw;
       -webkit-transition: width .5s;
   }
 
   .projects-panels-container:hover .projects-panel-tag-arrow{
-    margin-left: 0;
+    margin-left: .5vw;
     -webkit-transition: margin .5s;
   }
 
   .projects-panel-tag-arrow{
-    margin-left:-.75vw;
     -webkit-transition: margin .5s;
   }
 
@@ -252,6 +253,7 @@
     padding-left: 1vw;
     border-bottom: .1vw solid var(--red-dark-color);
     height: 3.6vw;
+    margin: 0;
   }
 
 
@@ -277,6 +279,18 @@
 
     .about-me-text-top {
         line-height: 160%;
+    }
+
+    .projects-panel-tag {
+      padding-top:4vw;
+    }
+
+    .projects-panels-body-container {
+      max-height: 7.5vw;
+    }
+
+    .projects-panels-body-text {
+      font-size: 1.5vw;
     }
   }
 

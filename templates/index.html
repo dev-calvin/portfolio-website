@@ -60,6 +60,10 @@
     overflow:hidden;
   }
 
+  .side-img {
+    display: none;
+  }
+
   .home-text {
     width:80vw;
     padding-left:1.5em;
@@ -233,6 +237,7 @@
     margin-top:1.5vw;
     padding-top:5vw;
     -webkit-transition: width .5s;
+    cursor: pointer;
   }
 
   .projects-panels-container:hover .projects-panel-tag{
@@ -259,12 +264,15 @@
 
   .projects-panels-body-container {
     max-height: 9.4vw;
-    overflow:scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
   }
 
   .projects-panels-body-text {
     font-size: 1.7vw;
     padding-left:1vw;
+    margin:0;
   }
 
   /* Extra small devices (phones, 600px and down) */
@@ -292,12 +300,25 @@
     .projects-panels-body-text {
       font-size: 1.5vw;
     }
+
+    .section-arrow {
+      display: none;
+    }
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
     .home-text-container {
       margin-top:15.5vw;
+    }
+
+
+    .projects-panels-body-text {
+      font-size: 1.5vw;
+    }
+
+    .section-arrow {
+      display: none;
     }
   }
 
@@ -311,6 +332,14 @@
     }
     .home-text {
       width:70vw;
+    }
+
+    .projects-panels-body-text {
+      font-size: 1.7vw;
+    }
+
+    .section-arrow {
+      display: block;
     }
   }
 
@@ -374,7 +403,7 @@
     <div class="row about-me-container scroll-to-section" id="about-me-container">
       <!-- <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"> -->
       <div class="col-1 side-img-container">
-          <img class="about-me-side-img" src="{{url_for('static', filename='images/car.jpeg')}}" alt="Photo of a cool car">
+          <img class="about-me-side-img side-img" src="{{url_for('static', filename='images/car.jpeg')}}" alt="Photo of a cool car">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row" id="about-me">
@@ -410,7 +439,7 @@
 
     <div class="row experience-container scroll-to-section" id="experience-container">
       <div class="col-1 side-img-container">
-        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
+        <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row">
@@ -459,11 +488,18 @@
 
     <div class="row projects-container scroll-to-section" id="projects-container">
       <div class="col-1 side-img-container">
-        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
+        <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row">
-          <h2 id="section-text">Projects.</h2>
+          <div class="row">
+            <div class="col">
+              <h2 id="section-text">Projects.</h2>
+            </div>
+            <div class="col" style="position: relative;">
+              <h5 style="position: absolute; bottom:0;">Click tab to learn more!</h5>
+            </div>
+          </div>
           <div class="col-6">
             <div class="row">
               <div class="row projects-panels-container">
@@ -473,7 +509,7 @@
                     <h5 class="projects-panels-body-text">An android app built with Java. It makes it easy to send personalized cards straight to the recipient.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag">
+                <div class="col-1 projects-panel-tag" onclick="window.location='/pixingo';">
                   <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                   </svg>
@@ -486,7 +522,7 @@
                     <h5 class="projects-panels-body-text">An education platform for ASU students (and others interested) to learn about, and practice, core cybersecurity concepts in a hands-on fashion.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag">
+                <div class="col-1 projects-panel-tag" onclick="window.location='/pwn-college';">
                   <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                   </svg>
@@ -503,7 +539,7 @@
                     <h5 class="projects-panels-body-text">A website for installers and homeowners to create a simple, efficient solution to enhance the solar-buying and installation experience.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag">
+                <div class="col-1 projects-panel-tag"  onclick="window.location='/final-mile-solar';">
                   <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                   </svg>
@@ -516,7 +552,7 @@
                     <h5 class="projects-panels-body-text">An android app built for tablet and tv sized devices with java. It supports doctors offices with staff location, communication, and data analytics.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag">
+                <div class="col-1 projects-panel-tag" onclick="window.location='/synctimes';">
                   <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                   </svg>
@@ -538,9 +574,9 @@
     </div>
 
 
-    <div class="row projects-container scroll-to-section" id="education-container">
+    <!-- <div class="row projects-container scroll-to-section" id="education-container">
       <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
-        <img class="experience-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
+        <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row">
@@ -550,12 +586,14 @@
       </div>
       <div class="col-1" style="height:40vw;padding-top:20%;">
         <div style="text-align:center;height:100%;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-          </svg>
+          <a href="#contact-container" class="section-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
+          </a>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
   </div>

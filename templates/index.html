@@ -5,25 +5,32 @@
 {{ super() }}
 <style media="screen">
 
-  .email-banner-container {
+  .keyboard-banner-container {
     position:absolute;
     left:0;
     right:0;
-    top:2em;
+    top:2vw;
   }
 
-  #keyboard-banner {
+  .keyboard-banner-img {
     opacity:75%;
     width:100%;
+    height:17vw;
   }
 
-  #email-banner {
+  .email-banner-container {
     position:absolute;
     right:0;
     bottom:10%;
     height:25%;
     width:30%;
     background-color:var(--background-color);
+  }
+
+  .email-banner-inside-container {
+    display:flex;
+    align-items:center;
+    height:100%;
   }
 
   #email-banner-text {
@@ -90,6 +97,12 @@
     width: 100vw;
   }
 
+  .about-me-content-container {
+    border: 1px dashed var(--red-dark-color);
+    padding: 1vw;
+    height: fit-content;
+  }
+
   .about-me-text {
     text-align:justify;
     font-size: 1.8vw;
@@ -126,14 +139,24 @@
     cursor:pointer;
   }
 
-  .section-arrow {
+  .next-section-arrow-column {
+    height:40vw;
+    padding-top:20%;
+  }
+
+  .next-section-arrow-container {
+    text-align:center;
+    height:100%;
+  }
+
+  .next-section-arrow {
     color: inherit;
     text-decoration: none;
     margin-left: 0;
     -webkit-transition: margin .5s;
   }
 
-  .section-arrow:hover {
+  .next-section-arrow:hover {
     color: color: var(--red-dark-color);
     cursor:pointer;
     margin-left: 1vw;
@@ -275,10 +298,28 @@
     margin:0;
   }
 
+  .projects-panels-tag-link{
+    padding:0;
+    width:fit-content;
+    color:black;
+  }
+
+  .projects-panels-tag-link:hover {
+    color:black;
+  }
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
+    .keyboard-banner-container {
+      top:10vw;
+    }
+
+    .home-text-padding-left {
+      border-right: .4vw dashed var(--red-dark-color);
+    }
+
     .home-text-container {
-      margin-top:15vw;
+      margin-top:19vw;
     }
 
     .about-me-text {
@@ -301,15 +342,23 @@
       font-size: 1.5vw;
     }
 
-    .section-arrow {
+    .next-section-arrow {
       display: none;
     }
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
+    .keyboard-banner-container {
+      top:8vw;
+    }
+
+    .home-text-padding-left {
+      border-right: .4vw dashed var(--red-dark-color);
+    }
+
     .home-text-container {
-      margin-top:15.5vw;
+      margin-top:19vw;
     }
 
 
@@ -317,13 +366,21 @@
       font-size: 1.5vw;
     }
 
-    .section-arrow {
+    .next-section-arrow {
       display: none;
     }
   }
 
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
+    .keyboard-banner-container {
+      top:4vw;
+    }
+
+    .home-text-padding-left {
+      border-right: .3vw dashed var(--red-dark-color);
+    }
+
     .home-text {
       padding-left:2.5em;
     }
@@ -338,20 +395,38 @@
       font-size: 1.7vw;
     }
 
-    .section-arrow {
+    .next-section-arrow {
       display: block;
     }
   }
 
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
+    .keyboard-banner-container {
+      top:3vw;
+    }
     .home-text-container {
       margin-top:16.5vw;
+    }
+
+    .home-text-padding-left {
+      border-right: .2vw dashed var(--red-dark-color);
     }
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
+    .keyboard-banner-container {
+      top:3vw;
+    }
+
+    .home-text-container {
+      margin-top:19vw;
+    }
+
+    .home-text-padding-left {
+      border-right: .15vw dashed var(--red-dark-color);
+    }
 
   }
 </style>
@@ -360,11 +435,12 @@
 {% block content %}
   {{ super() }}
   <div class="container">
-    <div class="row email-banner-container">
+    <!-- EMAIL BANNER  -->
+    <div class="row keyboard-banner-container">
       <div style="padding:0;">
-        <img style="height:17vw;" id="keyboard-banner" src="{{url_for('static', filename='images/keyboard-cropped.jpeg')}}" alt="mechanical keyboard photo">
-        <div id="email-banner">
-          <div style="display:flex;align-items:center;height:100%;">
+        <img class="keyboard-banner-img" src="{{url_for('static', filename='images/keyboard-cropped.jpeg')}}" alt="mechanical keyboard photo">
+        <div class="email-banner-container">
+          <div class="email-banner-inside-container">
             <div class="col-9">
               <p id="email-banner-text">calvin.mcclure0917@gmail.com</p>
             </div>
@@ -375,6 +451,9 @@
         </div>
       </div>
     </div>
+    <!-- END EMAIL BANNER  -->
+
+    <!-- HOME SECTION -->
     <div class="row home-text-container">
       <h4>Hello world, my name is</h4>
       <h1 id="section-text">Calvin McClure.</h1>
@@ -400,17 +479,18 @@
         </div>
       </div>
     </div>
-    <div class="row about-me-container scroll-to-section" id="about-me-container">
-      <!-- <div class="col-1" style="background-image:url({{url_for('static', filename='images/car.jpeg')}})"> -->
+    <!-- END HOME SECTION -->
+
+    <!-- ABOUT ME SECTION -->
+    <div class="row about-me-container scroll-to-section" id="aboutMe">
       <div class="col-1 side-img-container">
           <img class="about-me-side-img side-img" src="{{url_for('static', filename='images/car.jpeg')}}" alt="Photo of a cool car">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
-        <div class="row" id="about-me">
+        <div class="row">
           <div>
             <h2 id="section-text">About Me.</h2>
-            <div style="border: 1px dashed var(--red-dark-color); padding: 1vw;height: fit-content;">
-
+            <div class="about-me-content-container">
               <img class="about-me-img" src="{{url_for('static', filename='images/headshot.jpeg')}}" alt="Photo of Calvin McClure">
               <h5 class="about-me-text-top">
                 Hi, my name is Calvin and I have had an interest in tech my whole life. When I was younger, I never imagined I would learn so much about how it works.
@@ -425,9 +505,9 @@
           </div>
         </div>
       </div>
-      <div class="col-1" style="height:40vw;padding-top:20%;">
-        <div style="text-align:center;height:100%;">
-          <a href="#experience-container" class="section-arrow">
+      <div class="col-1 next-section-arrow-column">
+        <div class="next-section-arrow-container">
+          <a href="#experience" class="next-section-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg>
@@ -435,9 +515,10 @@
         </div>
       </div>
     </div>
+    <!-- END ABOUT ME SECTION -->
 
-
-    <div class="row experience-container scroll-to-section" id="experience-container">
+    <!-- EXPERIENCE SECTION -->
+    <div class="row experience-container scroll-to-section" id="experience">
       <div class="col-1 side-img-container">
         <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
@@ -474,9 +555,9 @@
           </div>
         </div>
       </div>
-      <div class="col-1" style="height:40vw;padding-top:20%;">
-        <div style="text-align:center;height:100%;">
-          <a href="#projects-container" class="section-arrow">
+      <div class="col-1 next-section-arrow-column">
+        <div class="next-section-arrow-container">
+          <a href="#projects" class="next-section-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg>
@@ -484,9 +565,10 @@
         </div>
       </div>
     </div>
+    <!-- END EXPERIENCE SECTION -->
 
-
-    <div class="row projects-container scroll-to-section" id="projects-container">
+    <!-- PROJECTS SECTION -->
+    <div class="row projects-container scroll-to-section" id="projects">
       <div class="col-1 side-img-container">
         <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
@@ -509,11 +591,13 @@
                     <h5 class="projects-panels-body-text">An android app built with Java. It makes it easy to send personalized cards straight to the recipient.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag" onclick="window.location='/pixingo';">
-                  <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                  </svg>
-                </div>
+                <a href="/pixingo" class="projects-panels-tag-link">
+                  <div class="col-1 projects-panel-tag">
+                    <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                      <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
               <div class="row projects-panels-container">
                 <div class="col-11 projects-panels">
@@ -522,11 +606,13 @@
                     <h5 class="projects-panels-body-text">An education platform for ASU students (and others interested) to learn about, and practice, core cybersecurity concepts in a hands-on fashion.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag" onclick="window.location='/pwn-college';">
-                  <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                  </svg>
-                </div>
+                <a href="/pwn-college" class="projects-panels-tag-link">
+                  <div class="col-1 projects-panel-tag">
+                    <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                      <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -539,11 +625,13 @@
                     <h5 class="projects-panels-body-text">A website for installers and homeowners to create a simple, efficient solution to enhance the solar-buying and installation experience.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag"  onclick="window.location='/final-mile-solar';">
-                  <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                  </svg>
-                </div>
+                <a href="/final-mile-solar" class="projects-panels-tag-link">
+                  <div class="col-1 projects-panel-tag">
+                    <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                      <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
               <div class="row projects-panels-container">
                 <div class="col-11 projects-panels">
@@ -552,19 +640,21 @@
                     <h5 class="projects-panels-body-text">An android app built for tablet and tv sized devices with java. It supports doctors offices with staff location, communication, and data analytics.</h5>
                   </div>
                 </div>
-                <div class="col-1 projects-panel-tag" onclick="window.location='/synctimes';">
-                  <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                  </svg>
-                </div>
+                <a href="/synctimes" class="projects-panels-tag-link">
+                  <div class="col-1 projects-panel-tag">
+                    <svg class="projects-panel-tag-arrow" xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                      <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-1" style="height:40vw;padding-top:20%;">
-        <div style="text-align:center;height:100%;">
-          <a href="#education-container" class="section-arrow">
+      <div class="col-1 next-section-arrow-column">
+        <div class="next-section-arrow-container">
+          <a href="#education" class="next-section-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg>
@@ -572,9 +662,11 @@
         </div>
       </div>
     </div>
+    <!-- END PROJECTS SECTION -->
 
 
-    <!-- <div class="row projects-container scroll-to-section" id="education-container">
+
+    <!-- <div class="row education-container scroll-to-section" id="education">
       <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
         <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
@@ -584,9 +676,9 @@
 
         </div>
       </div>
-      <div class="col-1" style="height:40vw;padding-top:20%;">
-        <div style="text-align:center;height:100%;">
-          <a href="#contact-container" class="section-arrow">
+      <div class="col-1 next-section-arrow-column">
+        <div class="next-section-arrow-container">
+          <a href="#contact" class="next-section-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg>
@@ -594,6 +686,11 @@
         </div>
       </div>
     </div> -->
+
+    <!-- FOOTER -->
+    <div class="row" style="height: 20vw;">
+    </div>
+    <!-- END FOOTER -->
 
 
   </div>

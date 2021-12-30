@@ -198,6 +198,9 @@
     margin-bottom:1vw;
     cursor: pointer;
 
+    padding-right: .1vw;
+    padding-left: 2vw;
+
     -webkit-transition: margin .5s;
   }
 
@@ -218,7 +221,7 @@
 
   .experience-button-text {
     border-left: 1px solid black;
-    padding-left: 1vw;
+    padding-left: .5vw;
     margin-top: 1vw;
     width: 100%;
   }
@@ -226,6 +229,12 @@
   .experience-button-employer-text {
     color: black;
     font-size: 1.3vw;
+    margin-bottom:.3vw;
+  }
+
+  .education-button-sub-text {
+    color: black;
+    font-size: 1vw;
   }
 
   .experience-button-date-text {
@@ -666,26 +675,57 @@
 
 
 
-    <!-- <div class="row education-container scroll-to-section" id="education">
-      <div class="col-1" style="margin:0;padding:0;overflow:hidden;">
+    <!-- EDUCATION SECTION -->
+    <div class="row experience-container scroll-to-section" id="education">
+      <div class="col-1 side-img-container">
         <img class="experience-img side-img" src="{{url_for('static', filename='images/red_circuit.jpg')}}" alt="Photo of Calvin McClure">
       </div>
       <div class="col-9" style="margin-left: 3vw; margin-top:1vw;">
         <div class="row">
           <h2 id="section-text">Education.</h2>
-
+          <div class="col-3">
+            <div class="row">
+              <div id="asu-education-button" class="experience-button experience-button-selected">
+                <div class="col-1"></div>
+                <div class="col-10 experience-button-text">
+                  <h3 class="experience-button-employer-text">Arizona State University</h3>
+                  <h6 class="education-button-sub-text">Computer Science (Cyber Sec.)</h6>
+                  <p class="experience-button-date-text">(2017-2021)</p>
+                </div>
+              </div>
+              <div id="west-mec-education-button" class="experience-button">
+                <div class="col-1"></div>
+                <div class="col-10 experience-button-text">
+                  <h3 class="experience-button-employer-text">West-MEC CTE Program</h3>
+                  <h6 class="education-button-sub-text">Coding Program</h6>
+                  <p class="experience-button-date-text">(2017-2021)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-9" style="border: 1px dashed var(--red-dark-color);height:30vw;">
+            <div class="row" id="asu-text">
+              <h4 class="experience-title-text">Computer Science (Cyber Security)</h4>
+              <h5 class="experience-text">At ASU I had a lot of time to practice the concepts I learned at West-Mec. In addition to strengthening the skills I already had I also learned a lot about other parts of the computer. I got lessons on each part of the computer from lower level topics like hardware logic, and assembly languages to higher level topics such as theoretical computer science, operating systems, algorithms, and cybersecurity.</h5>
+            </div>
+            <div class="row hidden" id="west-mec-text">
+              <h4 class="experience-title-text">Coding CTE Program</h4>
+              <h5 class="experience-text" style="font-size: 2vw;">During high school I joined an interactive coding program prepared me for a career as a software developer. It taught me how to design and develop software, build apps for phones, tablets, websites, and write and test computer code. The program consisted of over a thousand hours overall.</h5>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-1 next-section-arrow-column">
         <div class="next-section-arrow-container">
-          <a href="#contact" class="next-section-arrow">
+          <a href="#" class="next-section-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
               <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
             </svg>
           </a>
         </div>
       </div>
-    </div> -->
+    </div>
+    <!-- END EDUCATION SECTION -->
 
     <!-- FOOTER -->
     <div class="row" style="height: 20vw;">
@@ -717,6 +757,31 @@
       //change button highlight
       $('#xlr8-experience-button').removeClass('experience-button-selected');
       $('#qwaltec-experience-button').addClass('experience-button-selected');
+    });
+    // experience buttons
+    // ############################################
+
+    // experience buttons
+    // ############################################
+    $('#asu-education-button').click(function() {
+      //change text
+      $('#experience-tooltip').addClass('hidden');
+      $('#west-mec-text').addClass('hidden');
+      $('#asu-text').removeClass('hidden');
+
+      //change button highlight
+      $('#asu-education-button').addClass('experience-button-selected');
+      $('#west-mec-education-button').removeClass('experience-button-selected');
+    });
+
+    $('#west-mec-education-button').click(function() {
+      $('#experience-tooltip').addClass('hidden');
+      $('#west-mec-text').removeClass('hidden');
+      $('#asu-text').addClass('hidden');
+
+      //change button highlight
+      $('#asu-education-button').removeClass('experience-button-selected');
+      $('#west-mec-education-button').addClass('experience-button-selected');
     });
     // experience buttons
     // ############################################
